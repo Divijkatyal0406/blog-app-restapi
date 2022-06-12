@@ -10,6 +10,12 @@ connection.once("open",()=>{
 
 app.route("/").get((req,res)=> res.send("Test"));
 
+
+app.use(express.json());
+const userRoute=require("./routes/user");
+//anything after user like user/register,user/delete will be handled by user.js file 
+app.use("/user",userRoute);
+
 const Port=process.env.port || 3000
 
 app.listen(Port,()=> console.log(`Server running on port ${Port}`));
