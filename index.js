@@ -2,15 +2,15 @@ const express=require("express");
 const mongoose=require("mongoose");
 
 const app=express();
-mongoose.connect('mongodb://localhost:27017/myapp');
+mongoose.connect('mongodb://localhost:27017/blogdb1');
 const connection=mongoose.connection;
 connection.once("open",()=>{
     console.log("MongoDB connected")
 });
 
-app.route("/").get((req,res)=> res.send("Test"));
+app.route("/").get((req,res)=> res.json("Test"));
 
-
+//middleware 
 app.use(express.json());
 const userRoute=require("./routes/user");
 //anything after user like user/register,user/delete will be handled by user.js file 
