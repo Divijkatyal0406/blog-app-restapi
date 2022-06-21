@@ -16,6 +16,6 @@ const userRoute=require("./routes/user");
 //anything after user like user/register,user/delete will be handled by user.js file 
 app.use("/user",userRoute);
 
-const Port=process.env.port || 3000
+const port=process.env.PORT || 3000
 
-app.listen(Port,()=> console.log(`Server running on port ${Port}`));
+app.listen(port,()=> console.log(`Server running on port ${port}`));
