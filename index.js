@@ -2,7 +2,7 @@ const express=require("express");
 const mongoose=require("mongoose");
 
 const app=express();
-// mongoose.connect("mongodb+srv://Divij0406:divij0406@cluster0.u7k1p.mongodb.net/blogdb1");
+mongoose.connect("mongodb+srv://Divij0406:divij0406@cluster0.u7k1p.mongodb.net/blogdb1");
 const connection=mongoose.connection;
 connection.once("open",()=>{
     console.log("MongoDB connected")
